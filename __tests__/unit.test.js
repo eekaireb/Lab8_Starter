@@ -56,3 +56,37 @@ test('invalid  password #1', () => {
 test('invalid  password #2', () => {
     expect(functions.isStrongPassword('1')).toBe(false);
   });
+
+//test for isDate
+test('valid date #1', () => {
+    expect(functions.isDate('12/22/1999')).toBe(true);
+  });
+
+test('valid date #2', () => {
+    expect(functions.isDate('1/2/2021')).toBe(true);
+  });
+
+test('invalid date #1', () => {
+    expect(functions.isDate('31/4/33')).toBe(false);
+  });
+
+test('invalid date #2', () => {
+    expect(functions.isDate('04/10/00')).toBe(false);
+  });
+
+//test for isHexColor
+test('valid hex color #1', () =>{
+    expect(functions.isHexColor('89b2fa')).toBe(true);
+  });
+
+test('valid hex color #2', () => {
+    expect(functions.isHexColor('FC0')).toBe(true);
+  });
+
+test('invalid hex color #1', () => {
+    expect(functions.isHexColor('zkg')).toBe(false);
+  });
+
+test('invalid hex color #2', () => {
+    expect(functions.isHexColor('zzzkgg')).toBe(false);
+  });
